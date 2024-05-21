@@ -24,7 +24,7 @@ function DayWise({data}) {
     <>
     <div className=' flex flex-col gap-2 w-[30%]'>
       {data?.content[0]?.map((item,index)=>
-      <div  onClick={()=>{setDay(index)}} className={`cursor-pointer  smb p-2 w-[60%]  ${day===index ? "hmb" : ""} justify-center rounded flex items-center gap-2 bg-red-50`}><i class="fa-solid fa-calendar-days"></i><div>Day {index+1}</div></div>
+      <div  onClick={()=>{setDay(index)}} className={`cursor-pointer  smb p-2 w-[60%] wei9j309uj20 ${day===index ? "hmb" : ""} justify-center rounded flex items-center gap-2 bg-red-50`}><i class="fa-solid fa-calendar-days"></i><div>Day {index+1}</div></div>
     )}
     </div>
     <div className='w-[50%] gap-2 flex flex-col *:rounded-lg'>

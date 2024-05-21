@@ -21,16 +21,19 @@ function QueryWrapper({query}) {
       item?.category?.toLowerCase().includes(query?.toLowerCase())
     );
   }
+  const results2 = (query) => {
+    return courses.filter((item) => item?.title.toLowerCase().includes(query?.toLowerCase()))
+  }
   
    const [result,setResult] = useState()
    useEffect(()=>{
-     setResult(results(query))
+     setResult([...results(query),...results2(query)])
    },[query])
  
   return (
-    <div className='grid lg:grid-cols-5 w-[95%] gap-4 mx-auto mb-[9rem]'>
+    <div className='grid lg:grid-cols-5 w-[90%] gap-4 mx-auto mb-[9rem] qrn'>
         {
-          result?.length>0 && query?.length>0 ?   result?.map((item)=><CourseCard item={item} />) : <div className='w-[78vw] flex my-10 '><HashLoader className='rotate-[180deg] mx-auto' color="#ff0000" /></div>
+          result?.length>0 && query?.length>0 ?   result?.map((item)=><CourseCard item={item} />) : <div className='w-[78vw] flex my-10 '><HashLoader className='rotate-[180deg] mx-auto loader' color="#ff0000" /></div>
         }
     </div>
   )

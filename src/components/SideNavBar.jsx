@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import illus from "../assets/sidebarillus.png"
 import illus2 from "../assets/Questions-pana.png"
-function SideNavBar() {
+function SideNavBar({visible}) {
   let [bg1,setBg1] = useState();
    let [bg2,setBg2] = useState();
    let [bg3,setBg3] = useState();
@@ -43,7 +43,7 @@ function SideNavBar() {
 }
   return (
    
-    <div className='w-[17vw] bg-[#ffffff] h-full flex flex-col  fixed '>
+    <div className={`w-[17vw] snw bg-[#ffffff] h-full flex flex-col anime fixed ${visible? "left-[0%]" : "left-[-60%]"} fixed z-[1000]`}>
 
        <div className="companylogo flex font-bold mx-auto mt-4 ">
         <h1 className='text-[2.3rem] text-[#d84646]'>Course</h1><span className='text-[2.3rem]'>Hub</span>

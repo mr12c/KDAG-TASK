@@ -27,8 +27,8 @@ function CourseContentPage() {
  },[course_id])
 
   return (
-    <div className='w-[82vw] flex bg-white'>
-        <div className='w-[70%] min-h-[100vh] '>
+    <div className='w-[82vw] onw flex ccpnc bg-white'>
+        <div className='w-[70%] min-h-[100vh] ccpnc1 '>
             <div className='mt-8'>
             <div>
             <div>
@@ -75,7 +75,7 @@ function CourseContentPage() {
             </div>
             <hr className='mt-4 bg-[black] h-[1.5px]'/>
             <div className='flex flex-col'> 
-                <div className='flex justify-end mt-4'>
+                <div className='flex justify-end mt-4 togglenew'>
                       <div className={`px-2 relative py-1 rounded-full bg-red-100 flex gap-6 after:w-[50%] after:h-[90%] after:translate-y-[5%] after:left-[2%] after:absolute after:bg-[#f23f3f] after:top-0 after:rounded-full cursor-pointer ${content? "after:left-[48%]":"after:left-[2%]"} `} onClick={()=>setContent(prev=>!prev)}>
                         <h1 className='font-medium'>Day</h1>
                         <h2 className='font-medium'>Week</h2>

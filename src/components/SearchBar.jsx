@@ -28,8 +28,8 @@ function SearchBar() {
               dispatch(setActivecCategory(""))
               }} value={query} type="search" name="" id="" placeholder='Search by name or category' className='capitalize searchbar w-[20rem] pl-10 rounded-3xl py-3    '/>
         </div>
-        <div className='flex flex-col gap-2 mt-8'>
-          <div className='flex "*:rounded-full *:border *:border-red-100  *:px-2 *:py-0.5 dark:text-red-400    *:rounded-full *:text-[0.8rem] gap-6 *:cursor-pointer'>
+        <div className='flex flex-col gap-2 mt-8 nwdedo'>
+          <div className='flex   "*:rounded-full *:text-nowrap *:border *:border-red-100  *:px-2 *:py-0.5 dark:text-red-400    *:rounded-full *:text-[0.8rem] gap-6 *:cursor-pointer'>
            {category.map((item,index)=> index<4? <div    className={`${activeCategory===item.title? " bg-[#e83232] text-[white] font-semibold": "bg-red-50"} flex items-center gap-2`}> <p onClick={()=>{dispatch(setActivecCategory(item.title))}}>{item.title}</p>{item.title===query? <i onClick={()=>{ 
           setQuery("")
           dispatch(setActivecCategory("")) 

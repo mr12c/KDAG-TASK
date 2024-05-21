@@ -12,8 +12,12 @@ import { useState } from "react";
 
 function App() {
   let dispatch = useDispatch();
+  const [width,setWidth] = useState();
+  const [isNavBarVisible,setIsNavBarVisible] = useState(false);
 
-
+  useEffect(()=>{
+    setWidth(window.innerWidth)
+  },[])
   const {courses} = useSelector((state)=>state.AppSlice)
   
  
@@ -751,7 +755,12 @@ function App() {
    useEffect(()=>{
      dispatch(setdata(data))
    },[])
-   
+  
+  useEffect(()=>{
+    if(width>500){
+      setIsNavBarVisible(prev=>!prev)
+    }
+  },[width])
   
    
 
@@ -761,8 +770,12 @@ function App() {
 
 
       <div className="w-screen h-screen bg-[#f3f2f2] flex justify-between "> 
-     <SideNavBar/>
-      <div className="absolute right-[-1%] " >
+      <div className={`text-[3rem] z-[1000] right-[-1%] bg-white w-full fixed ${width<500? "" : "displaynone"}`} ><i onClick={()=>{
+        setIsNavBarVisible(prev=>!prev)
+        console.log(isNavBarVisible)
+      }} className="fa-solid fa-bars ml-[80%]"></i></div>
+     <SideNavBar visible={isNavBarVisible}/>
+      <div className={`absolute right-[-1%] ${width<500 ? "mt-[4rem]" : ""} `} >
       <Outlet 
      /> 
       </div>

@@ -51,7 +51,7 @@ function InstitueWrapper() {
     <div className='w-[95%] mx-auto flex flex-col mt-[5rem]'>
         <h1 className='text-center text-[2rem] font-semibold mt-[1rem] text-[#000000] pb-10 capitalize'>Courses Offer from top Institute</h1>
         <motion.div   
-        className='w-full grid lg:grid-cols-3 gap-6'> 
+        className='w-full grid lg:grid-cols-3 intiswiper gap-6'> 
           {data[instituteCurrentPage-1]?.map((item,index)=> <InstitueCategory item={item} index={index}></InstitueCategory>)}
            
         </motion.div>

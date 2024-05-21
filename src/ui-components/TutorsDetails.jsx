@@ -14,8 +14,8 @@ let [imgs,setImg] = useState();
   return (
     <div className='w-[60%] mt-10  '>
         <h1 className='text-[1.4rem] font-medium'>Tutors</h1>
-        <div className='grid lg:grid-cols-5 gap-20 mt-10'>
-            {imgs?.map((item,index)=> index<5? <div className={`${item? "":""} w-[6vw] h-[6vw]  rounded-full overflow-hidden bg-slate-400`}><img src={item.urls.full} alt="" className="tutorprofile w-full h-full scale-[1.5]" /></div> : "" )}
+        <div className='grid lg:grid-cols-5 gap-20 mt-10 tutordiv'>
+            {imgs?.map((item,index)=> index<5? <div className={`${item? "":""} w-[6vw] h-[6vw] tutorimg  rounded-full overflow-hidden bg-slate-400`}><img src={item.urls.full} alt="" className="tutorprofile w-full h-full scale-[1.5]" /></div> : "" )}
         </div>
     </div>
 

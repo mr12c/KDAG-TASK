@@ -53,27 +53,27 @@ function Home() {
 
 
   return (
-    <div className='w-[82vw]  min-h-[100vh] bg-white'>
-      <div className='w-[77vw] h-[30vw] pt-4 pl-5 pr-5  mx-auto'>
-      <Swiper className='w-[80%] h-[60vh] rounded-xl swiper-container '  
+    <div className='w-[82vw] onw min-h-[100vh] bg-white'>
+      <div className='w-[77vw] msnw h-[30vw] pt-4 pl-5 pr-5  mx-auto'>
+      <Swiper className='w-[80%]  h-[60vh] rounded-xl swiper-container '  
       // install Swiper modules
       
       modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
       spaceBetween={50}
       slidesPerView={1}
-      autoplay
+      autoplay={{ delay: 2500, disableOnInteraction: false }}
       slidesPerGroup={1} 
       loop={true} // Enable continuous loop
       
       navigation
       pagination={{ clickable: true }}
-      // scrollbar={{ draggable: true }}
+     
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
       
-      {imgs?.map((item)=>
-       <SwiperSlide><img src={item.urls.regular} alt="" className='swipeimg w-full' /></SwiperSlide>
+      {imgs?.map((item,index)=>
+      index<5? <SwiperSlide><img src={item.urls.regular} alt="" className='swipeimg w-full' /></SwiperSlide> : ""
     )}
       
     </Swiper>
@@ -90,10 +90,10 @@ function Home() {
           <h1 className='text-[1.2rem] text-center font-semibold capitalize text-[#565656]'>over <span className='text-[red]
           '>1 Lakh+</span> job oppuritunites are creating </h1>
           <h1 className=' mt-9 text-[2.3rem] capitalize font-bold text-center'>Our Hiring Partners </h1>
-          <div className='flex items-center justify-center gap-10 mt-[-39px]'>
+          <div className='flex items-center justify-center gap-10 mt-[-39px] brandcon'>
             {brandLogo.map((item,index)=>{
-              return <img src={item} alt=""  className={`w-[8rem] h-[8rem]  mt-[2rem]   mb-[2rem] ${index==2? "h-[1.9rem]" : "" }
-            ${index==3? "h-[1.9rem]" : ""}   `}
+              return <img src={item} alt=""  className={`w-[8rem] h-[8rem] scaledown mt-[2rem]   mb-[2rem] ${index==2? "h-[1.7rem]" : "" }
+            ${index==3? "h-[1.7rem]" : ""}  scaledown `}
               />
             })}
           </div>
@@ -107,7 +107,7 @@ function Home() {
           <div><h1 className='text-[3vw] text-[#6a6060] font-medium mb-10 mt-10 '>What our students says</h1></div>
         <Swiper className='w-[80%] h-[60vh] rounded-xl swiper-container'
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      spaceBetween={-300}
+      spaceBetween={300}
       slidesPerView={1}
       autoplay={{ delay: 2500, disableOnInteraction: false }}
       slidesPerGroup={1}

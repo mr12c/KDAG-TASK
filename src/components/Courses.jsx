@@ -5,7 +5,7 @@ import QueryWrapper from './QueryWrapper'
 
 function Courses() {
   return (
-    <div className='w-[82vw] min-h-[100vh] bg-white'>
+    <div className='w-[82vw] onw min-h-[100vh] bg-white'>
       <SearchBar/>
      
 
