@@ -1,68 +1,413 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.sidebarnavbtn::after{
+  content: "";
+  position: absolute;
+  width:6%;
+  top:0;
+  height:100%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s ;
+  
+  background-color:rgb(238, 69, 69);
+  
+  
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.sidebarnavbtn{
+    position: relative;
+    overflow: hidden;
 }
-a:hover {
-  color: #535bf2;
+ 
+ /* Navigation Arrows */
+ .swiper-container {
+  width: 100%;
+  height: 100%;
 }
 
-body {
-  margin: 0;
+.swiper-button-prev,
+.swiper-button-next {
+  color: #000000; /* Change arrow color */
+  /* background-color: #ff0606; Change arrow background color */
+}
+
+.swiper-pagination {
+  bottom: 10px; /* Adjust pagination position */
+}
+
+.swiper-pagination-bullet {
+  width: 10px; /* Adjust bullet width */
+  height: 10px; /* Adjust bullet height */
+  background-color: #000; /* Change bullet color */
+  opacity: 0.5; /* Change bullet opacity */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000;
+  color:red; /* Change active bullet color */
+  opacity: 1; /* Change active bullet opacity */
+}
+
+
+.catbox{
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;  
+}
+.catbtn{
+  /* border:solid rgb(0, 55, 255) 1px; */
+  padding: 5px;
+  padding-left: 10px;
+  padding-right:10px;
+  border-radius: 4px;
+  justify-self: end;
+  background-color: #3784f9;
+  font-weight: 600;
+  color:white
+}
+.catbtn:hover{
+  background-color: #609bf3;
+}
+
+body{
+  background-color: white;
+  overflow-x:hidden;
+}
+
+
+.catbox:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+}
+
+::-webkit-scrollbar{
+  background-color: red;
+  width:4px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: black;
+  height:30px;
+  width:3px;
+}
+
+
+
+  .cta-btn{
+    
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 10px;
+    border:solid 0.4px red;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+
+  }
+
+  .cta-btn  i{
+  display: none;
+  }
+  
+  .cta-btn p{
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  }
+  .cta-btn i{
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  }
+  .cta-btn:hover i{
+    /* transform: translateX(8px); */
+    display:block;
+  }
+
+ .vishal
+  {
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+  }
+  .searchbar{
+   transition: all cubic-bezier(0.19, 1, 0.22) 0.5s;
+    outline: none;
+    border: solid 0.4px black;
+  }
+  .searchbar:focus{
+    border:none;
+    box-shadow: 0 0 3px 0.1rem rgba(238, 68, 68, 0.312);
+  
+  }
+  .course-card{
+    border:solid 0.4px rgba(222, 222, 222, 0.773);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  }
+ @font-face {
+  font-family: vishal;
+  src: url(./assets/font1.ttf);
+ }
+ *{
+  font-family: vishal;
+ }
+
+ .tcd{
+   /* border:solid 0.4px rgba(246, 29, 29, 0.715); */
+   box-shadow: rgba(255, 3, 3, 0.418) 0px 1px 2px;
+   /* box-shadow: 3px 3px rgba(241, 18, 14, 0.823) , rgba(246, 46, 46, 0.204) 5px 5px 5px, rgba(255, 0, 0, 0.078) 8px 8px 8px; */
+ }
+
+ .tutorprofile{
+  margin-top: 10px;
+ }
+ 
+ .blinker{
+  background-color: #e0ddddbf;
+   animation:blinker 3s linear  infinite  ;
+   
+   
+  }
+
+
+  @keyframes blinker {
+    0%{
+      opacity:0.3;
+    }
+    12%{
+      opacity:0.4;
+    }
+    24%{
+      opacity:0.6;
+    }
+    36%{
+      opacity:0.8;    
+    }
+    48%{
+      opacity:1;
+    }
+    60%{
+      opacity:0.8;
+    }
+    72%{
+      opacity:0.6;
+    }
+    84%{
+      opacity:0.4;
+    }
+    96%{
+      opacity:0.3;
+    }
+    100%{
+      opacity: 0.3;
+    }
+    
+  }
+
+
+  .container {
+    background: #fff;
+    width: 440px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 15px;
+  }
+  
+  .container .heading {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .container .heading h1 {
+    font-weight: 800;
+  }
+  
+  .container .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .container p {
+    color: hsl(292, 16%, 49%);
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  
+  .container .question img {
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .container hr {
+    border: 1px solid #d3d3d3;
+  }
+  
+  .attribution {
+    margin-top: 40px;
+  }
+  
+  @media (max-width: 565px) {
+    .container {
+      width: 400px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .container {
+      width: 350px;
+    }
+  }
+
+
+  .swipeimg{
+    background-position: center;
+  }
+
+  .testpara::first-letter{
+   font-size: 1.8rem;
+  }
+
+  .tooltips{
+    text-wrap: nowrap;
+    background-color: black;
+    color:white;
+    opacity: 0;
+
+  }
+  
+  .tooltips::after{
+    content: "";
+    position:absolute;
+    background-color: rgb(0, 0, 0);
+    width: 0.8rem;
+    height: 0.8rem;
+    left:43%;
+    top:75%;
+    transform: translateX(50%) ,rotate(45deg);
+    rotate: 45deg;
+   
+    
+  }
+  
+  .heart:hover .tooltips{
+   opacity: 1;
+  }
+
+ /* custom-swiper-styles.css */
+
+/* Custom Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important; /* Change arrow color */
+  background: #000 !important; /* Add background color */
+  border-radius: 50% !important; /* Make the arrows circular */
+  width: 30px !important; /* Custom width */
+  height: 30px !important; /* Custom height */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #333 !important; /* Change background on hover */
+}
+
+/* Custom Arrow Icons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 15px !important; /* Change arrow size */
+}
+
+/* Custom Pagination Bullets */
+.swiper-pagination-bullet {
+  background-color: #a7a3a3 !important; /* Bullet color */
+  opacity: 1 !important; /* Make bullets fully opaque */
+  width: 8px !important; /* Bullet width */
+  height: 8px !important; /* Bullet height */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000 !important; /* Active bullet color */
+}
+
+.testimg{
+  background-position: cover;
+  width:100%;
+  height: 100%;
+}
+
+
+.catbox2{
+  border: solid 0.4px rgb(228, 227, 227);
+  background-color: #f8f8f8;
+}
+
+
+ 
+
+.pagination-container {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.pagination-page-number {
+  margin: 0 5px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.pagination-page-number.pagination-active {
+  background-color: #131010;
+  color: #fff;
+  border-color: black;
+}
+
+.pagination-arrow {
+  border-radius: 5px;
+  margin: 0 10px;
+  color:white;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 5px 10px;
+  border: 1px solid #ff0505;
+  background-color: #e33232;
+  cursor: pointer;
+}
+
+.pagination-arrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-dots {
+  margin: 0 5px;
+}
+
+
+.bc{
+  background-size: center;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.imgdiv{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.smb{
+  border:solid 0.4px rgba(147, 146, 146, 0.801);
+}
+
+.hmb{
+  border:solid 2px red;
 }

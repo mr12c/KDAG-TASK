@@ -5,9 +5,34 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+        const plus = document.querySelectorAll(".plus");
+const cross = document.querySelectorAll(".cross");
+const hidden = document.querySelectorAll(".hidden");
+const para = document.querySelectorAll(".para");
+
+for (let i = 0; i < plus.length; i++) {
+  plus[i].addEventListener("click", function () {
+    plus[i].classList.toggle("hidden");
+    cross[i].classList.toggle("hidden");
+    para[i].classList.toggle("hidden");
+  });
+}
+
+for (let i = 0; i < cross.length; i++) {
+  cross[i].addEventListener("click", function () {
+    cross[i].classList.toggle("hidden");
+    plus[i].classList.toggle("hidden");
+    para[i].classList.toggle("hidden");
+  });
+}
+    </script>
   </body>
 </html>
