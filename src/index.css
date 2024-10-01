@@ -539,6 +539,11 @@ body{
       gap:18px
   
     }
+
+    .mysearchpagegrid{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
     .ccpnc{
     display: flex;
     flex-direction: column;
@@ -696,3 +701,14 @@ body{
     display: none;
   }
   
+
+
+  .pagebar{
+     border:solid 1px #282c80 !important;
+ 
+  }
+  .pagebar:active{
+    border:solid 1px #061b6f !important;
+  }
+
+ 
