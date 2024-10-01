@@ -63,7 +63,7 @@ function SideNavBar({visible}) {
         </div> */}
         <div className='w-full flex flex-col justify-center items-center  mt-[8rem] '>
           <ul className='flex flex-col gap-4'>
-          <NavLink  to="/home" className={({isActive})=>` ${ isActive? "*:text-[red] *:after:right-[0%]" : "" }`} onClick={()=>{
+          <NavLink  to="/" className={({isActive})=>` ${ isActive? "*:text-[red] *:after:right-[0%]" : "" }`} onClick={()=>{
             setBg1(true);
             setBg2(false);
             setBg3(false);
